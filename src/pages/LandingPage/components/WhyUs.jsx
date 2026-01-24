@@ -1,92 +1,93 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ShieldCheck, UserCheck, HeartHandshake, Users, Lock, IndianRupee, CalendarCheck, ScrollText, Sparkles } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './WhyUs.css';
-
-const features = [
-    {
-        icon: <ShieldCheck size={24} />,
-        title: 'Verified Profiles',
-        subtitle: 'Trusted',
-        description: '100% government ID verified profiles to ensure a safe and trustworthy matchmaking experience.',
-        ctaText: 'Learn More'
-    },
-    {
-        icon: <UserCheck size={24} />,
-        title: 'Kundali Matching',
-        subtitle: 'Vedic',
-        description: 'Traditional Vedic compatibility checks integrated directly into your partner search.',
-        ctaText: 'Check Now'
-    },
-    {
-        icon: <HeartHandshake size={24} />,
-        title: 'Personalized Matches',
-        subtitle: 'AI Powered',
-        description: 'AI-driven recommendations that respect your family values and personal preferences.',
-        ctaText: 'Find Match'
-    },
-    {
-        icon: <Users size={24} />,
-        title: 'Family Oriented',
-        subtitle: 'Community',
-        description: 'A platform designed for families, fostering serious connections and lifelong bonds.',
-        ctaText: 'Join Us'
-    },
-    {
-        icon: <Lock size={24} />,
-        title: 'Privacy First',
-        subtitle: 'Secure',
-        description: 'Your data is secure with us. You control who sees your photos and contact details.',
-        ctaText: 'View Policy'
-    },
-
-    {
-        icon: <CalendarCheck size={24} />,
-        title: 'Event Management',
-        subtitle: 'Seamless',
-        description: 'From engagement to reception, we handle all your event planning needs with perfection.',
-        ctaText: 'Explore'
-    },
-    {
-        icon: <ScrollText size={24} />,
-        title: 'Free Pandit Services',
-        subtitle: 'Spiritual',
-        description: 'Complimentary consultation with experienced Pandits for auspicious dates and rituals.',
-        ctaText: 'Consult Now'
-    },
-    {
-        icon: <Sparkles size={24} />,
-        title: 'Complete Wedding Planning',
-        subtitle: 'End-to-End',
-        description: 'A one-stop solution for all your wedding needs, ensuring a stress-free celebration.',
-        ctaText: 'Get Details'
-    }
-];
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.3,
-            delayChildren: 0.2
-        }
-    }
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { 
-        opacity: 1, 
-        y: 0,
-        transition: { duration: 0.8, ease: "easeOut" }
-    }
-};
-
 import RosePetalBlast from "../../../components/RosePetalBlast";
 import { ArrowRight, MessageCircle, Bell } from 'lucide-react';
 
 const WhyUs = () => {
+    const { t } = useTranslation();
+
+    const features = [
+        {
+            icon: <ShieldCheck size={24} />,
+            title: t('why_us.features.verified.title'),
+            subtitle: t('why_us.features.verified.subtitle'),
+            description: t('why_us.features.verified.desc'),
+            ctaText: t('why_us.features.verified.cta')
+        },
+        {
+            icon: <UserCheck size={24} />,
+            title: t('why_us.features.kundali.title'),
+            subtitle: t('why_us.features.kundali.subtitle'),
+            description: t('why_us.features.kundali.desc'),
+            ctaText: t('why_us.features.kundali.cta')
+        },
+        {
+            icon: <HeartHandshake size={24} />,
+            title: t('why_us.features.matches.title'),
+            subtitle: t('why_us.features.matches.subtitle'),
+            description: t('why_us.features.matches.desc'),
+            ctaText: t('why_us.features.matches.cta')
+        },
+        {
+            icon: <Users size={24} />,
+            title: t('why_us.features.family.title'),
+            subtitle: t('why_us.features.family.subtitle'),
+            description: t('why_us.features.family.desc'),
+            ctaText: t('why_us.features.family.cta')
+        },
+        {
+            icon: <Lock size={24} />,
+            title: t('why_us.features.privacy.title'),
+            subtitle: t('why_us.features.privacy.subtitle'),
+            description: t('why_us.features.privacy.desc'),
+            ctaText: t('why_us.features.privacy.cta')
+        },
+        {
+            icon: <CalendarCheck size={24} />,
+            title: t('why_us.features.event.title'),
+            subtitle: t('why_us.features.event.subtitle'),
+            description: t('why_us.features.event.desc'),
+            ctaText: t('why_us.features.event.cta')
+        },
+        {
+            icon: <ScrollText size={24} />,
+            title: t('why_us.features.pandit.title'),
+            subtitle: t('why_us.features.pandit.subtitle'),
+            description: t('why_us.features.pandit.desc'),
+            ctaText: t('why_us.features.pandit.cta')
+        },
+        {
+            icon: <Sparkles size={24} />,
+            title: t('why_us.features.wedding.title'),
+            subtitle: t('why_us.features.wedding.subtitle'),
+            description: t('why_us.features.wedding.desc'),
+            ctaText: t('why_us.features.wedding.cta')
+        }
+    ];
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.3,
+                delayChildren: 0.2
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { duration: 0.8, ease: "easeOut" }
+        }
+    };
+
     return (
         <section className="why-us-section" id="why-us" style={{ 
             background: 'linear-gradient(135deg, var(--color-ivory) 0%, #fff8e1 50%, #ffe0b2 100%)',
@@ -107,8 +108,8 @@ const WhyUs = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <h2>Why Choose Shubh Vivah?</h2>
-                    <p>Building trust through tradition, technology, and transparency.</p>
+                    <h2>{t('why_us.title')}</h2>
+                    <p>{t('why_us.subtitle')}</p>
                 </motion.div>
 
                 <motion.div 

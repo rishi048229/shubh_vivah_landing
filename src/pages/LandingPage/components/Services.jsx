@@ -1,27 +1,29 @@
 import React, { useState, useRef } from 'react';
 import { motion, useScroll, useTransform, useTime, useSpring } from 'framer-motion';
 import { Camera, Utensils, Calendar, Sparkles, ShieldCheck, Users, Lock, ScrollText, Mail, Music, Plane, ClipboardCheck, Gem } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Services.css';
 
 export default function Services() {
-    const [activeCategory, setActiveCategory] = useState('Photography & Videography'); // Default active
+    const { t } = useTranslation();
+    const [activeCategory, setActiveCategory] = useState('photography'); // Use key instead of name
     const [isHovering, setIsHovering] = useState(false);
     const containerRef = useRef(null);
 
     // Service Data for Highlight Card
     const serviceDetails = {
-        'Photography & Videography': { vendors: 150, price: '₹xxxx', label: 'Capture every moment' },
-        'Fashion & Jewelry': { vendors: 80, price: 'On Request', label: 'Bridal wear & Accessories' },
-        'Catering': { vendors: 200, price: '₹xxx/plate', label: 'Exquisite culinary delights' },
-        'Entertainment & Music': { vendors: 90, price: '₹xxxx', label: 'DJs, Bands & Performers' },
-        'Horoscope': { vendors: 'AI', price: 'FREE', label: 'Vedic Matchmaking' },
-        'Venue': { vendors: 300, price: '₹xxxx', label: 'Palaces, Halls & Lawns' },
-        'Honeymoon Planning': { vendors: 40, price: '₹xxxx', label: 'Romantic Getaways' },
-        'E-invites': { vendors: 50, price: '₹xxxx', label: 'Eco-friendly & Stylish' },
-        'Event Management': { vendors: 70, price: '₹xxxx', label: 'End-to-end Planning' },
+        'photography': { vendors: 150, price: '₹xxxx', label: t('services.labels.photography') },
+        'fashion': { vendors: 80, price: 'On Request', label: t('services.labels.fashion') },
+        'catering': { vendors: 200, price: '₹xxx/plate', label: t('services.labels.catering') },
+        'music': { vendors: 90, price: '₹xxxx', label: t('services.labels.music') },
+        'horoscope': { vendors: 'AI', price: 'FREE', label: t('services.labels.horoscope') },
+        'venue': { vendors: 300, price: '₹xxxx', label: t('services.labels.venue') },
+        'honeymoon': { vendors: 40, price: '₹xxxx', label: t('services.labels.honeymoon') },
+        'invites': { vendors: 50, price: '₹xxxx', label: t('services.labels.invites') },
+        'management': { vendors: 70, price: '₹xxxx', label: t('services.labels.management') },
     };
 
-    const currentService = serviceDetails[activeCategory] || serviceDetails['Photography & Videography'];
+    const currentService = serviceDetails[activeCategory] || serviceDetails['photography'];
 
     // 1. Scroll Progress
     const { scrollYProgress } = useScroll({
@@ -51,15 +53,15 @@ export default function Services() {
     const negativeRotation = useTransform(totalRotation, value => -value);
 
     const categories = [
-        { name: 'Photography & Videography', icon: <Camera size={24} /> },
-        { name: 'Fashion & Jewelry', icon: <Gem size={24} /> },
-        { name: 'Catering', icon: <Utensils size={24} /> },
-        { name: 'Entertainment & Music', icon: <Music size={24} /> },
-        { name: 'Horoscope', icon: <ScrollText size={24} /> },
-        { name: 'Venue', icon: <Calendar size={24} /> },
-        { name: 'Honeymoon Planning', icon: <Plane size={24} /> },
-        { name: 'E-invites', icon: <Mail size={24} /> },
-        { name: 'Event Management', icon: <ClipboardCheck size={24} /> },
+        { id: 'photography', name: t('services.categories.photography'), icon: <Camera size={24} /> },
+        { id: 'fashion', name: t('services.categories.fashion'), icon: <Gem size={24} /> },
+        { id: 'catering', name: t('services.categories.catering'), icon: <Utensils size={24} /> },
+        { id: 'music', name: t('services.categories.music'), icon: <Music size={24} /> },
+        { id: 'horoscope', name: t('services.categories.horoscope'), icon: <ScrollText size={24} /> },
+        { id: 'venue', name: t('services.categories.venue'), icon: <Calendar size={24} /> },
+        { id: 'honeymoon', name: t('services.categories.honeymoon'), icon: <Plane size={24} /> },
+        { id: 'invites', name: t('services.categories.invites'), icon: <Mail size={24} /> },
+        { id: 'management', name: t('services.categories.management'), icon: <ClipboardCheck size={24} /> },
     ];
 
     return (
@@ -77,11 +79,9 @@ export default function Services() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h3>The Circle of Celebration</h3>
+                    <h3>{t('services.title')}</h3>
                     <p>
-                        Every ritual, every detail, orbits around your happiness. 
-                        Explore our curated circle of premium services designed to make your 
-                        Shubh Vivah truly auspicious and unforgettable.
+                        {t('services.description')}
                     </p>
                     
                     {/* Cultural SVG Background (Subtle) */}
@@ -105,7 +105,7 @@ export default function Services() {
                     >
                         <span>Shubh</span>
                         <h2>Vivah</h2>
-                        <p style={{ letterSpacing: '3px', fontSize: '0.8rem', marginTop: '10px', color: '#800000' }}>SERVICES</p>
+                        <p style={{ letterSpacing: '3px', fontSize: '0.8rem', marginTop: '10px', color: '#800000' }}>{t('services.center_text')}</p>
                     </motion.div>
                 </div>
 
@@ -158,12 +158,12 @@ export default function Services() {
                         
                         return (
                             <div
-                                key={cat.name}
-                                className={`service-item ${activeCategory === cat.name ? 'active' : ''}`}
+                                key={cat.id}
+                                className={`service-item ${activeCategory === cat.id ? 'active' : ''}`}
                                 style={{
                                     transform: `rotate(${angle}deg) translate(38vmin) rotate(-${angle}deg)`
                                 }}
-                                onMouseEnter={() => { setIsHovering(true); setActiveCategory(cat.name); }}
+                                onMouseEnter={() => { setIsHovering(true); setActiveCategory(cat.id); }}
                                 onMouseLeave={() => { setIsHovering(false); }}
                             >
                                 <motion.div 
@@ -196,16 +196,16 @@ export default function Services() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4 }}
                 >
-                    <h4>{activeCategory}</h4>
+                    <h4>{categories.find(c => c.id === activeCategory)?.name}</h4>
                     <p style={{ fontSize: '0.9rem', color: '#666' }}>{currentService.label}</p>
                     
                     <div className="stat-row">
                         <div className="stat-item">
-                            <span className="stat-label">Vendors</span>
+                            <span className="stat-label">{t('services.stats.vendors')}</span>
                             <span className="stat-value">{currentService.vendors}+</span>
                         </div>
                         <div className="stat-item">
-                            <span className="stat-label">Starting</span>
+                            <span className="stat-label">{t('services.stats.starting')}</span>
                             <span className="stat-value">{currentService.price}</span>
                         </div>
                     </div>
@@ -215,23 +215,23 @@ export default function Services() {
                 <div className="how-it-works">
                     <motion.div className="step-item" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
                         <div className="step-number">1</div>
-                        <span className="step-text">Hover to explore services</span>
+                        <span className="step-text">{t('services.steps.1')}</span>
                     </motion.div>
                     <motion.div className="step-item" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
                         <div className="step-number">2</div>
-                        <span className="step-text">Click to view top vendors</span>
+                        <span className="step-text">{t('services.steps.2')}</span>
                     </motion.div>
                     <motion.div className="step-item" initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }}>
                         <div className="step-number">3</div>
-                        <span className="step-text">Book your perfect match</span>
+                        <span className="step-text">{t('services.steps.3')}</span>
                     </motion.div>
                 </div>
 
                 {/* Trust Badges */}
                 <div className="trust-badges">
-                    <div className="trust-badge"><ShieldCheck size={16} /> Verified</div>
-                    <div className="trust-badge"><Users size={16} /> Trusted</div>
-                    <div className="trust-badge"><Lock size={16} /> Secure</div>
+                    <div className="trust-badge"><ShieldCheck size={16} /> {t('services.trust.verified')}</div>
+                    <div className="trust-badge"><Users size={16} /> {t('services.trust.trusted')}</div>
+                    <div className="trust-badge"><Lock size={16} /> {t('services.trust.secure')}</div>
                 </div>
 
             </div>

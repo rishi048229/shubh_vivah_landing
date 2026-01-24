@@ -2,9 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGooglePlay, faAppStore } from '@fortawesome/free-brands-svg-icons';
+import { useTranslation } from 'react-i18next';
 import aboutAppImg from '../../../assets/about-app-mobile.png';
 
 const AppDownload = () => {
+    const { t } = useTranslation();
+
     return (
         <section style={{
             padding: '6rem 2rem',
@@ -76,14 +79,14 @@ const AppDownload = () => {
                         marginBottom: '1.5rem',
                         lineHeight: '1.2'
                     }}>
-                        Experience Shubh Vivah <br/>
+                        {t('app_download.title_prefix')} <br/>
                         <span style={{ 
                             color: 'var(--color-gold)',
                             fontFamily: 'var(--font-heading)',
                             fontSize: '2.5rem',
                             textTransform: 'uppercase',
                             letterSpacing: '2px'
-                        }}>On The Go</span>
+                        }}>{t('app_download.title_suffix')}</span>
                     </h2>
                     
                     <p style={{
@@ -93,8 +96,7 @@ const AppDownload = () => {
                         lineHeight: '1.6',
                         fontFamily: 'var(--font-body)'
                     }}>
-                        Soon we will be available on Play Store and App Store. 
-                        Stay connected with your perfect match anytime, anywhere.
+                        {t('app_download.description')}
                     </p>
 
                     <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
@@ -120,8 +122,8 @@ const AppDownload = () => {
                         >
                             <FontAwesomeIcon icon={faGooglePlay} size="2x" />
                             <div style={{ textAlign: 'left' }}>
-                                <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.8, fontFamily: 'var(--font-body)' }}>COMING SOON ON</span>
-                                <span>Google Play</span>
+                                <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.8, fontFamily: 'var(--font-body)' }}>{t('app_download.coming_soon')}</span>
+                                <span>{t('app_download.google_play')}</span>
                             </div>
                         </motion.button>
 
@@ -147,8 +149,8 @@ const AppDownload = () => {
                         >
                             <FontAwesomeIcon icon={faAppStore} size="2x" />
                             <div style={{ textAlign: 'left' }}>
-                                <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.8, fontFamily: 'var(--font-body)' }}>COMING SOON ON</span>
-                                <span>App Store</span>
+                                <span style={{ display: 'block', fontSize: '0.7rem', opacity: 0.8, fontFamily: 'var(--font-body)' }}>{t('app_download.coming_soon')}</span>
+                                <span>{t('app_download.app_store')}</span>
                             </div>
                         </motion.button>
                     </div>

@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Grid, MessageCircle, Heart, LogOut, LogIn, Info, Star } from "lucide-react";
 import { MandapIcon, CoupleIcon, DiyaIcon, KalashIcon, UserTilakIcon } from "./Icons";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import logoImg from "../assets/navbar_logo.png";
+import LanguageSwitcher from "./LanguageSwitcher";
 import "./Navbar.css";
 
 /* ---------- NAVBAR ---------- */
@@ -15,6 +17,7 @@ export default function Navbar() {
   
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const checkAuth = () => {
@@ -73,11 +76,11 @@ export default function Navbar() {
     { path: "/shortlist", icon: <Heart size={20} />, label: "Shortlist" },
     { path: "/my-profile", icon: <UserTilakIcon size={20} />, label: "Profile" },
   ] : [
-    { path: "/", icon: <MandapIcon size={20} />, label: "Home" },
-    { path: "/#services", icon: <DiyaIcon size={20} />, label: "Services" },
-    { path: "/#about-us", icon: <Info size={20} />, label: "About Us" },
-    { path: "/#why-us", icon: <Star size={20} />, label: "Why Us" },
-    { path: "/login", icon: <LogIn size={20} />, label: "Login" },
+    { path: "/", icon: <MandapIcon size={20} />, label: t('navbar.home') },
+    { path: "/#services", icon: <DiyaIcon size={20} />, label: t('navbar.services') },
+    { path: "/#about-us", icon: <Info size={20} />, label: t('navbar.about_us') },
+    { path: "/#why-us", icon: <Star size={20} />, label: t('navbar.why_us') },
+    { path: "/login", icon: <LogIn size={20} />, label: t('navbar.login') },
   ];
 
   const isHero = location.pathname === "/" && !scrolled;
@@ -111,6 +114,8 @@ export default function Navbar() {
             </Link>
           ))}
           
+          <LanguageSwitcher />
+
           {isLoggedIn && (
             <button onClick={handleLogout} className="nav-icon-link" title="Logout">
                 <span className="nav-icon-wrapper"><LogOut size={20} /></span>

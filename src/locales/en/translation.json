@@ -1,0 +1,185 @@
+{
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "about_us": "About Us",
+    "why_us": "Why Us",
+    "partners": "Partners",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "hero": {
+    "title_prefix": "Shubh",
+    "title_suffix": "Vivah",
+    "subtitle": "Where Soulmates Meet & Perfect Matches Begin",
+    "cta": "Find Your Match"
+  },
+  "services": {
+    "title": "The Circle of Celebration",
+    "description": "Every ritual, every detail, orbits around your happiness. Explore our curated circle of premium services designed to make your Shubh Vivah truly auspicious and unforgettable.",
+    "center_text": "SERVICES",
+    "categories": {
+      "photography": "Photography & Videography",
+      "fashion": "Fashion & Jewelry",
+      "catering": "Catering",
+      "music": "Entertainment & Music",
+      "horoscope": "Horoscope",
+      "venue": "Venue",
+      "honeymoon": "Honeymoon Planning",
+      "invites": "E-invites",
+      "management": "Event Management"
+    },
+    "labels": {
+      "photography": "Capture every moment",
+      "fashion": "Bridal wear & Accessories",
+      "catering": "Exquisite culinary delights",
+      "music": "DJs, Bands & Performers",
+      "horoscope": "Vedic Matchmaking",
+      "venue": "Palaces, Halls & Lawns",
+      "honeymoon": "Romantic Getaways",
+      "invites": "Eco-friendly & Stylish",
+      "management": "End-to-end Planning"
+    },
+    "stats": {
+      "vendors": "Vendors",
+      "starting": "Starting"
+    },
+    "steps": {
+      "1": "Hover to explore services",
+      "2": "Click to view top vendors",
+      "3": "Book your perfect match"
+    },
+    "trust": {
+      "verified": "Verified",
+      "trusted": "Trusted",
+      "secure": "Secure"
+    }
+  },
+  "horoscope": {
+    "title": "Daily Horoscope",
+    "subtitle": "Discover what the stars have aligned for you today.",
+    "cta": "Find Your Rashi",
+    "modal": {
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "yearly": "Yearly",
+      "lucky_color": "Lucky Color",
+      "lucky_number": "Lucky Number",
+      "prediction": "Today brings new opportunities for connection. Your charm is at an all-time high, making it a perfect day for social gatherings or meeting someone special. Trust your intuition in matters of the heart."
+    }
+  },
+  "why_us": {
+    "title": "Why Choose Shubh Vivah?",
+    "subtitle": "Building trust through tradition, technology, and transparency.",
+    "features": {
+      "verified": {
+        "title": "Verified Profiles",
+        "subtitle": "Trusted",
+        "desc": "100% government ID verified profiles to ensure a safe and trustworthy matchmaking experience.",
+        "cta": "Learn More"
+      },
+      "kundali": {
+        "title": "Kundali Matching",
+        "subtitle": "Vedic",
+        "desc": "Traditional Vedic compatibility checks integrated directly into your partner search.",
+        "cta": "Check Now"
+      },
+      "matches": {
+        "title": "Personalized Matches",
+        "subtitle": "AI Powered",
+        "desc": "AI-driven recommendations that respect your family values and personal preferences.",
+        "cta": "Find Match"
+      },
+      "family": {
+        "title": "Family Oriented",
+        "subtitle": "Community",
+        "desc": "A platform designed for families, fostering serious connections and lifelong bonds.",
+        "cta": "Join Us"
+      },
+      "privacy": {
+        "title": "Privacy First",
+        "subtitle": "Secure",
+        "desc": "Your data is secure with us. You control who sees your photos and contact details.",
+        "cta": "View Policy"
+      },
+      "event": {
+        "title": "Event Management",
+        "subtitle": "Seamless",
+        "desc": "From engagement to reception, we handle all your event planning needs with perfection.",
+        "cta": "Explore"
+      },
+      "pandit": {
+        "title": "Free Pandit Services",
+        "subtitle": "Spiritual",
+        "desc": "Complimentary consultation with experienced Pandits for auspicious dates and rituals.",
+        "cta": "Consult Now"
+      },
+      "wedding": {
+        "title": "Complete Wedding Planning",
+        "subtitle": "End-to-End",
+        "desc": "A one-stop solution for all your wedding needs, ensuring a stress-free celebration.",
+        "cta": "Get Details"
+      }
+    }
+  },
+  "previous_events": {
+    "title": "What we will help to create",
+    "subtitle": "Live the magical moments we will create.",
+    "events": {
+      "royal": "Royal Wedding",
+      "grand": "Grand Celebration",
+      "magical": "Magical Moments"
+    }
+  },
+  "about_us": {
+    "title": "About Shubh Vivah",
+    "subtitle": "Where Traditions Meet Modern Harmony",
+    "intro": "At Shubh Vivah, we believe that a wedding is not just a union of two souls but a celebration of families, culture, and lifelong promises. We are dedicated to making this journey seamless, transparent, and memorable for everyone involved.",
+    "points": {
+      "ecosystem": {
+        "title": "One-Stop Wedding Ecosystem",
+        "desc": "We provide everything under one roof — from matchmaking to complete wedding planning."
+      },
+      "families": {
+        "title": "For Singles & Families",
+        "desc": "We help individuals find their soulmates while supporting families through the entire wedding journey."
+      },
+      "vendors": {
+        "title": "Vendor-Friendly Platform",
+        "desc": "We empower local wedding vendors by giving them a digital platform to grow and reach the right customers."
+      },
+      "charges": {
+        "title": "No Hidden Charges",
+        "desc": "Transparency is our core value — no hidden fees, no last-minute surprises."
+      },
+      "planning": {
+        "title": "Complete Wedding Planning",
+        "desc": "From matchmaking, kundali matching, vendors, venues, rituals, and celebrations — we manage it all."
+      },
+      "local": {
+        "title": "Support for Local Businesses",
+        "desc": "We actively promote and uplift local vendors, helping them scale their services ethically."
+      },
+      "trusted": {
+        "title": "Personalized & Trusted Matches",
+        "desc": "Matches are curated with care, compatibility, and cultural values in mind."
+      },
+      "tech": {
+        "title": "Tradition + Technology",
+        "desc": "We blend Indian traditions with modern technology to deliver a seamless, respectful, and secure experience."
+      },
+      "affordable": {
+        "title": "Affordable for All",
+        "desc": "We offer flexible and low-cost plans to ensure that finding your soulmate is accessible to everyone."
+      }
+    }
+  },
+  "app_download": {
+    "title_prefix": "Experience Shubh Vivah",
+    "title_suffix": "On The Go",
+    "description": "Soon we will be available on Play Store and App Store. Stay connected with your perfect match anytime, anywhere.",
+    "coming_soon": "COMING SOON ON",
+    "google_play": "Google Play",
+    "app_store": "App Store"
+  }
+}

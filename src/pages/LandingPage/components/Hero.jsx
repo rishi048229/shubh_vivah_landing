@@ -1,6 +1,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 import heroVid from '../../../assets/Final_hero.mp4';
 
@@ -12,6 +13,7 @@ const Hero = () => {
     const navigate = useNavigate();
     const videoRef = useRef(null);
     const [showComingSoon, setShowComingSoon] = useState(false);
+    const { t } = useTranslation();
 
     const handleVideoEnd = () => {
         setShowComingSoon(true);
@@ -149,7 +151,7 @@ const Hero = () => {
                         gap: '20px',
                         flexWrap: 'wrap'
                     }}>
-                        Shubh 
+                        {t('hero.title_prefix')} 
                         <motion.img 
                             src={logoImg} 
                             alt="Logo" 
@@ -173,7 +175,7 @@ const Hero = () => {
                                 ease: "easeInOut"
                             }}
                         />
-                        Vivah
+                        {t('hero.title_suffix')}
                     </h1>
 
                     <p style={{
@@ -185,7 +187,7 @@ const Hero = () => {
                         textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
                         color: '#eee'
                     }}>
-                        Where Soulmates Meet & Perfect Matches Begin
+                        {t('hero.subtitle')}
                     </p>
 
                     <motion.button
@@ -208,7 +210,7 @@ const Hero = () => {
                             cursor: 'pointer',
                         }}
                     >
-                        Find Your Match
+                        {t('hero.cta')}
                     </motion.button>
                 </motion.div>
             </motion.div>

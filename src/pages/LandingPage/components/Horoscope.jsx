@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, X } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './Horoscope.css';
 import zodiacSprite from '../../../assets/zodiac_sprite.png';
 
@@ -21,13 +22,14 @@ const RASHIS = [
 
 export default function Horoscope() {
     const [selectedRashi, setSelectedRashi] = useState(null);
+    const { t } = useTranslation();
 
     return (
         <section className="horoscope-section">
             <div className="horoscope-container">
                 <div className="section-header">
-                    <h2>Daily Horoscope</h2>
-                    <p>Discover what the stars have aligned for you today.</p>
+                    <h2>{t('horoscope.title')}</h2>
+                    <p>{t('horoscope.subtitle')}</p>
                 </div>
 
                 {/* RASHI CAROUSEL */}
@@ -59,7 +61,7 @@ export default function Horoscope() {
 
                 <div className="horoscope-cta">
                     <button className="btn-find-rashi" onClick={() => setSelectedRashi(RASHIS[0])}>
-                        Find Your Rashi <ChevronRight size={18} />
+                        {t('horoscope.cta')} <ChevronRight size={18} />
                     </button>
                 </div>
             </div>
@@ -104,20 +106,20 @@ export default function Horoscope() {
 
                             <div className="modal-content">
                                 <div className="horoscope-tabs">
-                                    <button className="active">Daily</button>
-                                    <button>Weekly</button>
-                                    <button>Yearly</button>
+                                    <button className="active">{t('horoscope.modal.daily')}</button>
+                                    <button>{t('horoscope.modal.weekly')}</button>
+                                    <button>{t('horoscope.modal.yearly')}</button>
                                 </div>
                                 <p className="horoscope-text">
-                                    Today brings new opportunities for connection. Your charm is at an all-time high, making it a perfect day for social gatherings or meeting someone special. Trust your intuition in matters of the heart.
+                                    {t('horoscope.modal.prediction')}
                                 </p>
                                 <div className="lucky-stats">
                                     <div className="stat">
-                                        <span>Lucky Color</span>
+                                        <span>{t('horoscope.modal.lucky_color')}</span>
                                         <strong style={{ color: selectedRashi.color }}>Red</strong>
                                     </div>
                                     <div className="stat">
-                                        <span>Lucky Number</span>
+                                        <span>{t('horoscope.modal.lucky_number')}</span>
                                         <strong>7</strong>
                                     </div>
                                 </div>

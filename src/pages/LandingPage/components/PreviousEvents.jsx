@@ -1,16 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PlayCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import prev1 from '../../../assets/prev 1.mp4';
 import prev2 from '../../../assets/prev 2.mp4';
 import prevNew from '../../../assets/prev.new.mp4';
 
 const PreviousEvents = () => {
+    const { t } = useTranslation();
+
     const events = [
-        { video: prev1, title: "Royal Wedding" },
-        { video: prev2, title: "Grand Celebration" },
-        { video: prevNew, title: "Magical Moments" }
+        { video: prev1, title: t('previous_events.events.royal') },
+        { video: prev2, title: t('previous_events.events.grand') },
+        { video: prevNew, title: t('previous_events.events.magical') }
     ];
 
     return (
@@ -33,10 +36,10 @@ const PreviousEvents = () => {
                         marginBottom: '1rem',
                         fontFamily: 'var(--font-royal)',
                         fontWeight: '700'
-                    }}>What we will help to create</h2>
+                    }}>{t('previous_events.title')}</h2>
                     <div style={{ width: '100px', height: '4px', backgroundColor: 'var(--color-kumkum)', margin: '0 auto', borderRadius: '2px' }}></div>
                     <p style={{ marginTop: '1.5rem', color: '#666', fontSize: '1.2rem' }}>
-                        Live the magical moments we will create.
+                        {t('previous_events.subtitle')}
                     </p>
                 </motion.div>
 

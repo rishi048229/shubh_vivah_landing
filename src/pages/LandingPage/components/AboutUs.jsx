@@ -1,54 +1,57 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Users, Store, ShieldCheck, CalendarHeart, TrendingUp, UserCheck, Smartphone, IndianRupee } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import './AboutUs.css';
 
 const AboutUs = () => {
+    const { t } = useTranslation();
+
     const points = [
         {
             icon: <Store size={28} />,
-            title: "One-Stop Wedding Ecosystem",
-            desc: "We provide everything under one roof — from matchmaking to complete wedding planning."
+            title: t('about_us.points.ecosystem.title'),
+            desc: t('about_us.points.ecosystem.desc')
         },
         {
             icon: <Users size={28} />,
-            title: "For Singles & Families",
-            desc: "We help individuals find their soulmates while supporting families through the entire wedding journey."
+            title: t('about_us.points.families.title'),
+            desc: t('about_us.points.families.desc')
         },
         {
             icon: <TrendingUp size={28} />,
-            title: "Vendor-Friendly Platform",
-            desc: "We empower local wedding vendors by giving them a digital platform to grow and reach the right customers."
+            title: t('about_us.points.vendors.title'),
+            desc: t('about_us.points.vendors.desc')
         },
         {
             icon: <ShieldCheck size={28} />,
-            title: "No Hidden Charges",
-            desc: "Transparency is our core value — no hidden fees, no last-minute surprises."
+            title: t('about_us.points.charges.title'),
+            desc: t('about_us.points.charges.desc')
         },
         {
             icon: <CalendarHeart size={28} />,
-            title: "Complete Wedding Planning",
-            desc: "From matchmaking, kundali matching, vendors, venues, rituals, and celebrations — we manage it all."
+            title: t('about_us.points.planning.title'),
+            desc: t('about_us.points.planning.desc')
         },
         {
             icon: <Heart size={28} />,
-            title: "Support for Local Businesses",
-            desc: "We actively promote and uplift local vendors, helping them scale their services ethically."
+            title: t('about_us.points.local.title'),
+            desc: t('about_us.points.local.desc')
         },
         {
             icon: <UserCheck size={28} />,
-            title: "Personalized & Trusted Matches",
-            desc: "Matches are curated with care, compatibility, and cultural values in mind."
+            title: t('about_us.points.trusted.title'),
+            desc: t('about_us.points.trusted.desc')
         },
         {
             icon: <Smartphone size={28} />,
-            title: "Tradition + Technology",
-            desc: "We blend Indian traditions with modern technology to deliver a seamless, respectful, and secure experience."
+            title: t('about_us.points.tech.title'),
+            desc: t('about_us.points.tech.desc')
         },
         {
             icon: <IndianRupee size={28} />,
-            title: "Affordable for All",
-            desc: "We offer flexible and low-cost plans to ensure that finding your soulmate is accessible to everyone."
+            title: t('about_us.points.affordable.title'),
+            desc: t('about_us.points.affordable.desc')
         }
     ];
 
@@ -83,8 +86,8 @@ const AboutUs = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h4 className="about-subtitle">Where Traditions Meet Modern Harmony</h4>
-                    <h2 className="about-title">About Shubh Vivah</h2>
+                    <h4 className="about-subtitle">{t('about_us.subtitle')}</h4>
+                    <h2 className="about-title">{t('about_us.title')}</h2>
                     <div className="about-divider"></div>
                 </motion.div>
 
@@ -96,7 +99,7 @@ const AboutUs = () => {
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.8 }}
                 >
-                    At Shubh Vivah, we believe that a wedding is not just a union of two souls but a celebration of families, culture, and lifelong promises. We are dedicated to making this journey seamless, transparent, and memorable for everyone involved.
+                    {t('about_us.intro')}
                 </motion.p>
 
                 {/* Grid */}

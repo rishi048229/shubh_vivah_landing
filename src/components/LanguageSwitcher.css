@@ -1,0 +1,65 @@
+.language-switcher-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+}
+
+.language-btn {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+  border-radius: 50px; /* Pill shape matches other buttons */
+  padding: 6px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: var(--color-maroon); /* Theme background */
+  border: 1px solid var(--color-gold);
+  border-radius: 10px;
+  padding: 5px 0;
+  min-width: 120px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.language-option {
+  padding: 8px 16px;
+  color: var(--color-gold);
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.language-option:hover {
+  background: rgba(212, 175, 55, 0.2); /* Gold tint on hover */
+}
+
+.language-option.active {
+  background: rgba(212, 175, 55, 0.1);
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -7,6 +7,7 @@ import '@fontsource/playfair-display';
 import '@fontsource/montserrat';
 import '@fontsource/great-vibes';
 import '@fontsource/cinzel';
+import './i18n';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
