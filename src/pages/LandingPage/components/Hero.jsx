@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import heroVid from '../../../assets/Final_hero.mp4';
 
-import intermissionVid from '../../../assets/intermission _vid_new.mp4';
+import intermissionVid from '../../../assets/final intermission.mp4';
 import logoImg from '../../../assets/logo.jpg';
 import { useNavigate } from 'react-router-dom';
 
