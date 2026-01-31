@@ -23,6 +23,7 @@ const SUGGESTIONS = [
   "Daily Horoscope",
   "What is Kundali Matching?",
   "Why Shubh Vivah?",
+  "Contact Us",
 ];
 
 export default function AIPanditBot() {
@@ -72,6 +73,8 @@ export default function AIPanditBot() {
     if (lowerText.includes("services")) targetId = "services";
     else if (lowerText.includes("horoscope")) targetId = "horoscope";
     else if (lowerText.includes("kundali") || lowerText.includes("why shubh")) targetId = "why-us";
+    else if (lowerText.includes("contact")) targetId = "contact-us";
+
 
     if (targetId) {
       setTimeout(() => {
@@ -94,6 +97,8 @@ export default function AIPanditBot() {
         return "Kundali matching helps ensure compatibility and happiness. At Shubh Vivah, we provide detailed Vedic compatibility reports. Redirecting you to learn more...";
     } else if (lowerInput.includes("why shubh") || lowerInput.includes("why us")) {
         return "Shubh Vivah is trusted by thousands for its transparency, security, and dedicated support. Here is why we are the best choice for you.";
+    } else if (lowerInput.includes("contact")) {
+        return "You can reach us at +91 80696 40559 or email support@thynktech.ltd. Taking you to our contact details below...";
     } else if (lowerInput.includes("match") || lowerInput.includes("find")) {
       return "I can certainly help with that! Based on your profile, I see some great matches in your community. Would you like to see them?";
     } else if (
