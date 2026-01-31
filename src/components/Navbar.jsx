@@ -3,7 +3,7 @@ import { Menu, X, Grid, MessageCircle, Heart, LogOut, LogIn, Info, Star } from "
 import { MandapIcon, CoupleIcon, DiyaIcon, KalashIcon, UserTilakIcon } from "./Icons";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import logoImg from "../assets/navbar_logo.png";
+import logoImg from "../assets/nav_logo_new.png";
 import LanguageSwitcher from "./LanguageSwitcher";
 import "./Navbar.css";
 
@@ -169,6 +169,9 @@ export default function Navbar() {
                  Register Free
              </Link>
           )}
+          <div style={{ padding: '0 1rem', marginTop: '0.5rem' }}>
+             <LanguageSwitcher />
+          </div>
         </div>
       )}
     </nav>

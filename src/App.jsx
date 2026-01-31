@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from "framer-motion";
 import { MessageSquare } from "lucide-react";
@@ -45,6 +46,15 @@ const ReviewButton = () => (
 
 function App() {
   const location = useLocation();
+  const { i18n } = useTranslation();
+  
+  useEffect(() => {
+    if (i18n.language === 'hi' || i18n.language === 'mr') {
+      document.body.classList.add('vernacular-font');
+    } else {
+      document.body.classList.remove('vernacular-font');
+    }
+  }, [i18n.language]);
   // const isAuthPage = location.pathname === "/login" || location.pathname === "/register";
   const isAuthPage = false; // No auth pages anymore
 

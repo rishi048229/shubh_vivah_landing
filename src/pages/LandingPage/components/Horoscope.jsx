@@ -25,7 +25,7 @@ export default function Horoscope() {
     const { t } = useTranslation();
 
     return (
-        <section className="horoscope-section">
+        <section className="horoscope-section" id="horoscope">
             <div className="horoscope-container">
                 <div className="section-header">
                     <h2>{t('horoscope.title')}</h2>

@@ -19,10 +19,10 @@ const INITIAL_MESSAGES = [
 ];
 
 const SUGGESTIONS = [
-  "Find matches near me",
-  "Check my horoscope compatibility",
-  "How to improve my profile?",
-  "Membership plans",
+  "Our Services",
+  "Daily Horoscope",
+  "What is Kundali Matching?",
+  "Why Shubh Vivah?",
 ];
 
 export default function AIPanditBot() {
@@ -59,18 +59,43 @@ export default function AIPanditBot() {
       };
       setMessages((prev) => [...prev, newBotMsg]);
       setIsTyping(false);
+
+      // Handle Redirects/Scrolling based on the question
+      handleNavigation(text);
     }, 1500);
+  };
+
+  const handleNavigation = (text) => {
+    const lowerText = text.toLowerCase();
+    let targetId = null;
+
+    if (lowerText.includes("services")) targetId = "services";
+    else if (lowerText.includes("horoscope")) targetId = "horoscope";
+    else if (lowerText.includes("kundali") || lowerText.includes("why shubh")) targetId = "why-us";
+
+    if (targetId) {
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 500); // Small delay to let the user read the message first
+    }
   };
 
   const getBotResponse = (input) => {
     const lowerInput = input.toLowerCase();
-    if (lowerInput.includes("match") || lowerInput.includes("find")) {
+    
+    if (lowerInput.includes("services")) {
+        return "We offer premium matchmaking services including Kundali matching, verified profiles, and wedding planning assistance. Taking you to our services section...";
+    } else if (lowerInput.includes("horoscope")) {
+        return "Your stars align for greatness! You can check your daily horoscope and lucky numbers right here. Let me show you.";
+    } else if (lowerInput.includes("kundali")) {
+        return "Kundali matching helps ensure compatibility and happiness. At Shubh Vivah, we provide detailed Vedic compatibility reports. Redirecting you to learn more...";
+    } else if (lowerInput.includes("why shubh") || lowerInput.includes("why us")) {
+        return "Shubh Vivah is trusted by thousands for its transparency, security, and dedicated support. Here is why we are the best choice for you.";
+    } else if (lowerInput.includes("match") || lowerInput.includes("find")) {
       return "I can certainly help with that! Based on your profile, I see some great matches in your community. Would you like to see them?";
-    } else if (
-      lowerInput.includes("horoscope") ||
-      lowerInput.includes("kundali")
-    ) {
-      return "Kundali matching is essential for a harmonious union. You can upload your horoscope in the Dashboard to get a detailed compatibility score.";
     } else if (
       lowerInput.includes("plan") ||
       lowerInput.includes("membership")

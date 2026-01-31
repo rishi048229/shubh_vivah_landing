@@ -5,7 +5,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     transition: all 0.3s ease-in-out;
     background: transparent;
 }
@@ -14,7 +14,19 @@
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    padding: 0.8rem 2rem;
+    padding: 0.3rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .navbar-logo-img {
+    width: 50px; /* Slights smaller but visible */
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo-text {
+    font-size: 1.4rem; /* Slightly larger for structure */
+    margin: 0; /* Remove extra margins to align with image */
 }
 
 .navbar.hidden {
@@ -38,21 +50,20 @@
 }
 
 .navbar-logo-img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
+    width: 60px; /* Reduced from 100px to be more structured initially */
+    height: 60px;
+    object-fit: contain;
+    /* border-radius: 50%; Remove for new logo if it's not circular */
     transition: transform 0.5s ease;
 }
 
 
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 1px;
-    margin-top: 10px;
-    margin-bottom: 25px; /* Nudge down for visual centering */
+    margin: 0; /* Reset margins for flex alignment */
     line-height: 1;
 }
 

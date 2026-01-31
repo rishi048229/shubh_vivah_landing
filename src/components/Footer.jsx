@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, ChevronRight, Send } from 'lucide-react';
+import logoImg from "../assets/nav_logo_new.png";
 import './Footer.css';
 
 const Footer = () => {
@@ -11,7 +12,10 @@ const Footer = () => {
                 <div className="footer-grid">
                     {/* Brand */}
                     <div className="footer-brand">
-                        <h3 style={{ fontFamily: 'var(--font-cursive)', fontSize: '2.5rem', color: 'var(--color-gold)' }}>Shubh Vivah</h3>
+                        <div className="brand-header">
+                            <img src={logoImg} alt="Shubh Vivah Logo" className="footer-logo-img" />
+                            <h3 style={{ fontFamily: 'var(--font-cursive)', fontSize: '2.5rem', color: 'var(--color-gold)', margin: 0 }}>Shubh Vivah</h3>
+                        </div>
                         <p>
                             Making matches made in heaven a reality on earth. We combine tradition with technology to help you find your perfect life partner.
                         </p>

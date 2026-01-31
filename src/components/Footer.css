@@ -30,6 +30,14 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 4rem;
     margin-bottom: 4rem;
+    align-items: start;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
 }
 
 .footer-brand h3 {
@@ -44,6 +52,15 @@
     color: #ccc;
     line-height: 1.8;
     font-size: 0.95rem;
+}
+
+.footer-logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    /* border-radius: 50%; remove border radius for png logo if needed, or keep if circular */
+    margin-bottom: 0;
+    /* border: 2px solid var(--color-gold); */
 }
 
 .footer-heading {
